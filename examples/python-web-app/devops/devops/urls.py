@@ -20,3 +20,12 @@ urlpatterns = [
     path('demo/', include('demo.urls')),
     path('admin/', admin.site.urls),
 ]
+from django.urls import path, include
+from django.shortcuts import redirect
+
+urlpatterns = [
+    path('', lambda request: redirect('demo/')),  # redirect root to /demo/
+    path('demo/', include('demo.urls')),
+    path('admin/', admin.site.urls),
+]
+
